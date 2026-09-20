@@ -12,4 +12,5 @@ Each week I add new pages and styles as I work thorugh the course assignments. T
 ## Home
 
 - [home](index.html)
+- [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 
