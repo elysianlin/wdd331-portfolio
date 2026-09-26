@@ -13,4 +13,6 @@ Each week, I add new pages and styles as I work through the course assignments. 
 ## Home
 
 - [Home](index.html)
-- [Custom Properties and Nesting](unit-1/custom-properties/index.html)
+- [Custom Properties and Nesting](unit-1/
+custom-properties/index.html)
+- [Scripture Study Companion] (unit-2/layered-components)
