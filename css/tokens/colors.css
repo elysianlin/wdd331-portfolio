@@ -1,0 +1,14 @@
+/* Color tokens: named by purpose, not appearance.
+   Pulled from the Unit 1 and Unit 2 assignments so the
+   whole site shares one palette. */
+:root {
+  --color-primary: #16324f;
+  --color-accent: #73cbb1;
+  --color-background: #eef3f5;
+  --color-surface: #ffffff;
+  --color-text: #1d2a33;
+  --color-muted: #52636d;
+  --color-link-hover: #35677d;
+  --color-border: #d4e0e6;
+  --color-focus: #16324f;
+}
