@@ -1,4 +1,4 @@
-/* Homepage navigation */
+/* Homepage navigation (also the header chrome that holds the theme toggle) */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -6,13 +6,15 @@ nav {
   justify-content: space-between;
   gap: var(--space-md);
   padding: var(--space-md);
-  background-color: var(--color-surface);
+  background-color: var(--header-bg);
+  color: var(--header-text);
   border-bottom: 1px solid var(--color-border);
 
   h2 {
     margin: 0;
+    margin-right: auto;
     font-size: 1.1rem;
-    color: var(--color-primary);
+    color: var(--header-text);
   }
 
   ul {
@@ -25,18 +27,22 @@ nav {
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
-    color: var(--color-muted);
+    color: var(--header-text);
 
     &:not([aria-current="page"]):hover {
-      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+      color: var(--header-text);
     }
 
     &[aria-current="page"] {
-      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+      color: var(--header-text);
     }
 
     &:focus-visible {
-      outline: 2px solid var(--color-focus);
+      outline: var(--outline-width) solid var(--header-text);
       outline-offset: 3px;
       border-radius: var(--radius-sm);
     }

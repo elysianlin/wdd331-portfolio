@@ -1,14 +1,85 @@
-/* Color tokens: named by purpose, not appearance.
-   Pulled from the Unit 1 and Unit 2 assignments so the
-   whole site shares one palette. */
+/* Color tokens: seeds -> ramp -> scheme switching -> semantic tokens.
+   Components should only ever reference the semantic --color-* tokens. */
+
 :root {
-  --color-primary: #16324f;
-  --color-accent: #73cbb1;
-  --color-background: #eef3f5;
-  --color-surface: #ffffff;
-  --color-text: #1d2a33;
-  --color-muted: #52636d;
-  --color-link-hover: #35677d;
-  --color-border: #d4e0e6;
-  --color-focus: #16324f;
+  color-scheme: light;
+
+  /* ---- Seeds: raw, human-chosen colors ---- */
+  --seed-bg: #eef3f5;
+  --seed-surface: #ffffff;
+  --seed-text: #1d2a33;
+  --seed-text-muted: #52636d;
+  --seed-primary: #16324f;                 /* headings, card borders */
+  --seed-accent: oklch(0.52 0.09 200);     /* teal brand color (hue 200) */
+  --seed-accent-hover: color-mix(in oklch, var(--seed-accent) 80%, black);
+  --seed-link: var(--seed-accent);
+  --seed-link-hover: var(--seed-accent-hover);
+  --seed-border: #d4e0e6;
+  --seed-border-strong: #b9cad3;
+
+  /* ---- Accent ramp ---- */
+  --accent-200: color-mix(in oklch, var(--seed-accent) 30%, white);
+  --accent-300: color-mix(in oklch, var(--seed-accent) 50%, white);
+  --accent-400: color-mix(in oklch, var(--seed-accent) 75%, white);
+  --accent-500: var(--seed-accent);
+  --accent-600: color-mix(in oklch, var(--seed-accent) 80%, black);
+  --accent-700: color-mix(in oklch, var(--seed-accent) 60%, black);
+  --accent-800: color-mix(in oklch, var(--seed-accent) 40%, black);
+}
+
+/* ---- Color-scheme switching ---- */
+
+/* User chose dark */
+html:has(input[name='theme-preference'][value='dark']:checked) {
+  color-scheme: dark;
+}
+
+/* User chose system and the OS is dark */
+@media (prefers-color-scheme: dark) {
+  html:has(input[name='theme-preference'][value='system']:checked) {
+    color-scheme: dark;
+  }
+}
+
+/* ---- Semantic tokens: light value, dark value ---- */
+:root,
+html {
+  --color-bg: light-dark(var(--seed-bg), oklch(0.18 0.02 235));
+  --color-surface: light-dark(var(--seed-surface), oklch(0.23 0.03 235));
+  --color-text: light-dark(var(--seed-text), oklch(0.9 0.015 235));
+  --color-text-muted: light-dark(var(--seed-text-muted), oklch(0.72 0.025 235));
+  --color-primary: light-dark(var(--seed-primary), oklch(0.9 0.04 235));
+  --color-accent: light-dark(var(--seed-accent), oklch(0.5 0.1 205));
+  --color-accent-hover: light-dark(var(--seed-accent-hover), oklch(0.58 0.11 205));
+  --color-link: light-dark(var(--seed-link), oklch(0.78 0.11 200));
+  --color-link-hover: light-dark(var(--seed-link-hover), oklch(0.85 0.12 200));
+  --color-border: light-dark(var(--seed-border), oklch(0.32 0.03 235));
+  --color-border-strong: light-dark(var(--seed-border-strong), oklch(0.4 0.03 235));
+  --color-focus: light-dark(var(--seed-primary), oklch(0.85 0.1 200));
+
+  /* Card tag chips */
+  --color-tag-bg: light-dark(var(--accent-200), oklch(0.32 0.05 205));
+  --color-tag-text: light-dark(var(--accent-800), oklch(0.9 0.05 200));
+
+  /* Legacy names from earlier units, pointed at the new tokens */
+  --color-background: var(--color-bg);
+  --color-muted: var(--color-text-muted);
+
+  /* Tint native checkboxes, radios, and range sliders */
+  accent-color: var(--color-accent);
+
+  /* ---- Header chrome ---- */
+  --header-bg: var(--color-accent);
+  --header-text: light-dark(#ffffff, #f0f4f8);
+
+  /* ---- Theme toggle (consumed by theme-toggle.css) ---- */
+  --theme-toggle-bg: color-mix(in srgb, var(--header-text) 20%, var(--header-bg));
+  --theme-toggle-border: color-mix(in srgb, var(--header-text) 40%, var(--header-bg));
+  --theme-toggle-bg-hover: color-mix(in srgb, var(--header-text) 30%, var(--header-bg));
+  --theme-toggle-border-hover: color-mix(in srgb, var(--header-text) 55%, var(--header-bg));
+
+  /* ---- Shadows ---- */
+  --shadow-color: light-dark(rgb(0 0 0 / 0.09), rgb(0 0 0 / 0.28));
+  --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadow-md: 0 1px 3px 0 var(--shadow-color);
 }
