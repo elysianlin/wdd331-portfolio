@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elysian Lin – Portfolio</title>
+  <script src="js/theme-preference.js"></script>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -12,6 +13,29 @@
     <ul>
       <li><a href="index.html" aria-current="page">Home</a></li>
     </ul>
+
+    <details class="theme-menu">
+      <summary class="theme-control">
+        <span class="visually-hidden">Color scheme</span>
+      </summary>
+      <div class="theme-extra" role="group" aria-label="Choose color scheme">
+        <label class="theme-control theme-pick" data-theme-pick="light">
+          <input name="theme-preference" type="radio" value="light">
+          <span aria-hidden="true">&#9788;&#65039;</span>
+          <span class="visually-hidden">Light</span>
+        </label>
+        <label class="theme-control theme-pick" data-theme-pick="system">
+          <input name="theme-preference" type="radio" value="system">
+          <span aria-hidden="true">&#9881;&#65039;</span>
+          <span class="visually-hidden">System default</span>
+        </label>
+        <label class="theme-control theme-pick" data-theme-pick="dark">
+          <input name="theme-preference" type="radio" value="dark">
+          <span aria-hidden="true">&#127766;</span>
+          <span class="visually-hidden">Dark</span>
+        </label>
+      </div>
+    </details>
   </nav>
 
   <header>
@@ -40,6 +64,18 @@
           <h3>Layered Components</h3>
           <p>A multi-component scripture study page built with @layer architecture, :is()/:not(), and accessible focus states.</p>
           <a href="unit-2/layered-components/index.html">View assignment</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="unit-group">
+      <h2>Unit 3</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-tag">Color</div>
+          <h3>Tokenized Color System and Dark Mode</h3>
+          <p>oklch() seeds, color-mix() ramps, light-dark() semantic tokens, and a persistent light/system/dark theme toggle.</p>
+          <a href="index.html">You are here</a>
         </article>
       </div>
     </section>
