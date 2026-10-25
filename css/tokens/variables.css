@@ -43,4 +43,13 @@
   --font-size-base: 1.0625rem;
   --radius: 0.75rem;
   --shadow-card: 0 1px 2px var(--shadow-color), 0 8px 16px -10px var(--shadow-color);
+
+  /* Elevation (layered shadow stacks) */
+  --shadow-resting: 0 1px 2px 0 var(--shadow-color), 0 1px 1px -1px var(--shadow-color);
+  --shadow-elevated: 0 4px 6px -2px var(--shadow-color), 0 12px 24px -8px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+
+  /* Glass panel */
+  --blur-glass: 12px;
+  --saturate-glass: 1.4;
+
 }
