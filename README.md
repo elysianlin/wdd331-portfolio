@@ -41,3 +41,5 @@ deployment.
 - [Editorial Layout](unit-4/grid-layouts/editorial.html)
 - [Responsive Card Grid](unit-4/grid-layouts/cards.html)
 - [Scroll Snap Carousel](unit-4/advanced/snap-carousel.html)
+- [Container Query Demo](unit-4/advanced/container-demo.html)
+- [Sticky Section Headers](unit-4/advanced/sticky-demo.html)

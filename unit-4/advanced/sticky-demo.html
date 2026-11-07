@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Section Headers</title>
+    <script src="../../js/theme-preference.js"></script>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+<body class="sticky-demo-page">
+    <nav class="site-nav">
+        <a href="../../index.html">&larr; Home</a>
+        <ul>
+            <li><a href="../grid-layouts/cards.html">Card Grid</a></li>
+            <li><a href="container-demo.html">Container Query</a></li>
+            <li><a href="#" aria-current="page">Sticky</a></li>
+        </ul>
+        <details class="theme-menu">
+            <summary class="theme-control">
+                <span class="visually-hidden">Color scheme</span>
+            </summary>
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                <label class="theme-control theme-pick" data-theme-pick="light">
+                    <input name="theme-preference" type="radio" value="light">
+                    <span aria-hidden="true">&#9788;&#65039;</span>
+                    <span class="visually-hidden">Light</span>
+                </label>
+                <label class="theme-control theme-pick" data-theme-pick="system">
+                    <input name="theme-preference" type="radio" value="system" checked>
+                    <span aria-hidden="true">&#9881;&#65039;</span>
+                    <span class="visually-hidden">System default</span>
+                </label>
+                <label class="theme-control theme-pick" data-theme-pick="dark">
+                    <input name="theme-preference" type="radio" value="dark">
+                    <span aria-hidden="true">&#127766;</span>
+                    <span class="visually-hidden">Dark</span>
+                </label>
+            </div>
+        </details>
+    </nav>
+
+    <header class="demo-header">
+        <h1>Sticky Section Headers</h1>
+        <p>Scroll down. Each heading locks to the top of the viewport while its section is in view.</p>
+    </header>
+
+    <main class="sticky-main">
+        <section class="scroll-section">
+            <div class="section-media"><img src="https://picsum.photos/seed/sticky-1/1200/300" alt=""></div>
+            <h2 class="sticky-heading">Deliberate Practice</h2>
+            <p>Deliberate practice is not simply doing something repeatedly. It is a structured form of improvement that requires focused attention, immediate feedback, and consistent effort at the edge of your current ability.</p>
+            <p>Three characteristics separate deliberate practice from mere repetition: it targets a specific aspect of performance, it demands full concentration, and it includes feedback so you know what to adjust.</p>
+            <p>Research across fields from music to athletics to software development confirms that the quality of practice matters far more than the quantity. An hour of focused, feedback-driven work outperforms an afternoon of passive repetition.</p>
+        </section>
+        <section class="scroll-section">
+            <div class="section-media"><img src="https://picsum.photos/seed/sticky-2/1200/300" alt=""></div>
+            <h2 class="sticky-heading">Grid vs. Flexbox</h2>
+            <p>Grid and Flexbox solve different problems. Grid excels at two-dimensional placement — rows and columns that need to align together. Flexbox excels at distributing items along a single axis.</p>
+            <p>Reaching for the wrong one doesn't usually break a layout outright, but it tends to produce extra wrapper elements, magic numbers, or alignment that only works by accident.</p>
+            <p>A useful habit: before writing any layout CSS, ask whether the content needs to align across two axes at once. If yes, it's a Grid problem.</p>
+        </section>
+        <section class="scroll-section">
+            <div class="section-media"><img src="https://picsum.photos/seed/sticky-3/1200/300" alt=""></div>
+            <h2 class="sticky-heading">Debugging Layout Problems</h2>
+            <p>Most layout bugs come from one of three sources: a misunderstood box model property, an ancestor with an unexpected overflow or positioning value, or a stacking context nobody meant to create.</p>
+            <p>DevTools' layout inspector will show grid tracks and flex lines directly on the page, which is usually faster than guessing from the CSS alone.</p>
+            <p>When something "should" work and doesn't, check the ancestor chain first. The element you're looking at is rarely the one causing the problem.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 My portfolio</p>
+    </footer>
+</body>
+</html>

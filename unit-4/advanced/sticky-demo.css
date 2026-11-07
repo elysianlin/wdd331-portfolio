@@ -1,0 +1,64 @@
+.demo-header {
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+
+  p {
+    color: var(--color-text-muted);
+  }
+}
+
+.sticky-main {
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: 0 var(--spacing-md) var(--spacing-xl);
+}
+
+.scroll-section {
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+
+  /*
+    BUG (reproduced, then fixed): overflow: hidden was originally set
+    here on .scroll-section to round the corners of the media image.
+    But .scroll-section is also an ancestor of .sticky-heading, so that
+    overflow value made .scroll-section a clipping/scroll container —
+    sticky positioning resolves against the nearest such ancestor, and
+    a section-sized clipping box meant the heading could never escape
+    past its own section to actually "stick" to the viewport.
+
+    FIX: the overflow: hidden moved down to .section-media alone (a
+    sibling of .sticky-heading, not its ancestor), so the rounded
+    corners still clip the image but nothing in the heading's ancestor
+    chain clips or scrolls it anymore.
+  */
+}
+
+.section-media {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+
+  img {
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.sticky-heading {
+  position: sticky;
+  top: var(--sticky-offset);
+  z-index: 1;
+  background: var(--color-bg);
+  padding: var(--spacing-sm) 0;
+  color: var(--color-accent);
+  font-size: var(--font-size-lg);
+}
+
+.scroll-section p {
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
