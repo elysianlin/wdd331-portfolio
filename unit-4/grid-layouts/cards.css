@@ -1,0 +1,82 @@
+.articles-page header {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+
+  h1 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  p {
+    color: var(--color-text-muted);
+  }
+}
+
+.articles-page main {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 0 var(--spacing-md) var(--spacing-xl);
+}
+
+/* auto-fit + minmax(min(), 1fr): cards are at least 240px,
+   grow equally to fill space, and the min() keeps a single
+   card from overflowing a viewport narrower than 240px. */
+.articles-page .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: var(--spacing-lg);
+}
+
+.articles-page .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+
+  /* Placeholder: fixed height */
+  > div:first-child {
+    height: 10rem;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent-300), var(--accent-500));
+  }
+
+  /* Body: flex column so the link can be pushed to the bottom */
+  > div:last-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--spacing-md);
+
+    h2 {
+      font-size: var(--font-size-md);
+      color: var(--color-accent);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      margin-bottom: var(--spacing-md);
+    }
+
+    a {
+      margin-top: auto;
+      align-self: flex-start;
+      color: var(--color-link);
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-link-hover);
+      }
+
+      &:focus-visible {
+        outline: var(--outline-width) solid var(--color-accent);
+        outline-offset: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.carousel-header {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+
+  p {
+    color: var(--color-text-muted);
+  }
+}
+
+.snap-carousel {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+  overflow-x: auto;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: var(--spacing-md);
+
+  /* Required container properties */
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  &:focus-visible {
+    outline: var(--outline-width) solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+.snap-card {
+  flex: 0 0 min(85%, 20rem);
+  scroll-snap-align: start;
+
+  /*
+    scroll-snap-stop: always — each card is a distinct named project,
+    not an infinite photo strip, so a fast swipe should stop at every
+    card in order rather than let momentum skip past two or three.
+    Browsing them sequentially is the point of this carousel.
+  */
+  scroll-snap-stop: always;
+
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    display: block;
+  }
+
+  .snap-card-body {
+    padding: var(--spacing-md);
+
+    h2 {
+      font-size: var(--font-size-md);
+      color: var(--color-accent);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    p {
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+    }
+  }
+}

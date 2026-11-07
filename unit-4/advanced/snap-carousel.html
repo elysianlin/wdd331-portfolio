@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Snap Carousel</title>
+    <script src="../../js/theme-preference.js"></script>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="snap-carousel.css">
+</head>
+<body class="carousel-page">
+    <nav class="site-nav">
+        <a href="../../index.html">&larr; Home</a>
+        <ul>
+            <li><a href="../grid-layouts/editorial.html">Editorial</a></li>
+            <li><a href="../grid-layouts/cards.html">Cards</a></li>
+            <li><a href="#" aria-current="page">Carousel</a></li>
+        </ul>
+        <details class="theme-menu">
+            <summary class="theme-control">
+                <span class="visually-hidden">Color scheme</span>
+            </summary>
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                <label class="theme-control theme-pick" data-theme-pick="light">
+                    <input name="theme-preference" type="radio" value="light">
+                    <span aria-hidden="true">&#9788;&#65039;</span>
+                    <span class="visually-hidden">Light</span>
+                </label>
+                <label class="theme-control theme-pick" data-theme-pick="system">
+                    <input name="theme-preference" type="radio" value="system" checked>
+                    <span aria-hidden="true">&#9881;&#65039;</span>
+                    <span class="visually-hidden">System default</span>
+                </label>
+                <label class="theme-control theme-pick" data-theme-pick="dark">
+                    <input name="theme-preference" type="radio" value="dark">
+                    <span aria-hidden="true">&#127766;</span>
+                    <span class="visually-hidden">Dark</span>
+                </label>
+            </div>
+        </details>
+    </nav>
+
+    <header class="carousel-header">
+        <h1>Featured Projects</h1>
+        <p>A horizontal, CSS-only card carousel built with scroll snap. No JavaScript.</p>
+    </header>
+
+    <main>
+        <ul class="snap-carousel" aria-label="Featured projects carousel" tabindex="0">
+            <li class="snap-card">
+                <img src="https://picsum.photos/seed/snap-1/400/250" alt="Project preview one">
+                <div class="snap-card-body">
+                    <h2>Layered Components</h2>
+                    <p>A multi-component page built with @layer architecture.</p>
+                </div>
+            </li>
+            <li class="snap-card">
+                <img src="https://picsum.photos/seed/snap-2/400/250" alt="Project preview two">
+                <div class="snap-card-body">
+                    <h2>Architecture and Build</h2>
+                    <p>A PostCSS bundler pipeline producing a minified stylesheet.</p>
+                </div>
+            </li>
+            <li class="snap-card">
+                <img src="https://picsum.photos/seed/snap-3/400/250" alt="Project preview three">
+                <div class="snap-card-body">
+                    <h2>Tokenized Color System</h2>
+                    <p>oklch() seeds and light-dark() semantics with a theme toggle.</p>
+                </div>
+            </li>
+            <li class="snap-card">
+                <img src="https://picsum.photos/seed/snap-4/400/250" alt="Project preview four">
+                <div class="snap-card-body">
+                    <h2>Visual Effects Showcase</h2>
+                    <p>Layered shadows, frosted glass, and shape-outside text wrap.</p>
+                </div>
+            </li>
+            <li class="snap-card">
+                <img src="https://picsum.photos/seed/snap-5/400/250" alt="Project preview five">
+                <div class="snap-card-body">
+                    <h2>Editorial Layout</h2>
+                    <p>A long-form article page driven by grid-template-areas.</p>
+                </div>
+            </li>
+            <li class="snap-card">
+                <img src="https://picsum.photos/seed/snap-6/400/250" alt="Project preview six">
+                <div class="snap-card-body">
+                    <h2>Responsive Card Grid</h2>
+                    <p>auto-fit and minmax() with the min() overflow-safety pattern.</p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 My portfolio</p>
+    </footer>
+</body>
+</html>
