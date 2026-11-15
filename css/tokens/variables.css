@@ -1,11 +1,45 @@
 /* Non-color tokens: typography, spacing, radii, transitions, icons, focus.
    The step-1 names are the source of truth; legacy names point at them. */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap') layer(tokens);
 
 :root {
   /* Typography */
-  --font-family-sans: system-ui, sans-serif;
-  --font-family-mono: monospace;
+  /* ---- Font families (role-based) ---- */
+  --font-family-heading: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-family-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: ui-monospace, monospace;
+
+  /* ---- Scale steps (position on the scale, not use) ----
+     Fixed small steps: ratio 1.2 */
+  --font-size-xs: 0.694rem;   /* step -2 */
+  --font-size-sm: 0.833rem;   /* step -1 */
+  --font-size-md: 1rem;       /* step 0, base */
+
+  /* Fluid steps: 1.2 ratio at 320px (20rem) -> 1.25 ratio at 1280px (80rem).
+     slope = (max - min) / 60;  vw = slope * 100;  intercept = min - slope * 20 */
+  --font-size-lg:  clamp(1.2rem,    1.1833rem + 0.0833vw, 1.25rem);
+  --font-size-xl:  clamp(1.44rem,   1.3992rem + 0.2042vw, 1.5625rem);
+  --font-size-2xl: clamp(1.728rem,  1.653rem  + 0.3752vw, 1.9531rem);
+  --font-size-3xl: clamp(2.0736rem, 1.951rem  + 0.613vw,  2.4414rem);
+  --font-size-4xl: clamp(2.4883rem, 2.3005rem + 0.9391vw, 3.0518rem);
+
+  /* ---- Line heights, tuned by role ---- */
+  --line-height-body: 1.6;
+  --line-height-heading: 1.2;
+  --line-height-display: 1.1;
+
+  /* ---- Semantic roles (components use ONLY these) ---- */
+  --font-size-body: var(--font-size-md);
+  --font-size-caption: var(--font-size-sm);
+  --font-size-lead: var(--font-size-lg);
+  --font-size-heading-sm: var(--font-size-xl);
+  --font-size-heading-md: var(--font-size-2xl);
+  --font-size-heading-lg: var(--font-size-3xl);
+  --font-size-display: var(--font-size-4xl);
+
+  /* ---- Legacy names ---- */
+  --font-size-base: var(--font-size-body);
+  --font-family-sans: var(--font-family-body);
   /* These three assume a 62.5% root size (1rem = 10px). This site keeps the
      browser default, so body text still uses --font-size-base below. */
   --font-size-sm: 1.4rem;

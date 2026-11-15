@@ -43,3 +43,12 @@ deployment.
 - [Scroll Snap Carousel](unit-4/advanced/snap-carousel.html)
 - [Container Query Demo](unit-4/advanced/container-demo.html)
 - [Sticky Section Headers](unit-4/advanced/sticky-demo.html)
+
+
+## Typography
+
+Type tokens live in `css/tokens/variables.css`: a modular scale (minor third at
+320px, major third at 1280px) with fluid `clamp()` steps from `lg` up, mapped to
+semantic roles (`--font-size-body`, `--font-size-heading-lg`, `--font-size-display`,
+etc.). Headings use DM Serif Display (Google Fonts, `font-display: swap`) with a
+Georgia fallback; body text uses the system font stack.
