@@ -38,7 +38,7 @@
   h1 {
     color: #ffffff;
     text-shadow: 0 2px 4px rgb(0 0 0 / 0.5), 0 1px 2px rgb(0 0 0 / 0.3);
-    font-size: clamp(2rem, 1.4rem + 3vw, 3rem);
+    font-size: var(--font-size-display);
   }
 
   p {
